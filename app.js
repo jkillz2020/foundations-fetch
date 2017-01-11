@@ -1,4 +1,4 @@
 ;(function(){
-  var app ={myApp: 'yes'};
+  var app = angular.module('myApp', []);
 })();
 
