@@ -17,7 +17,7 @@
     <div class='six columns offset-by-three'>
       <input type="text" ng-model="url">
       <button ng-click="fetch()">Fetch!</button>
-      <select name="select" ng-model="testicles">
+      <select name="select" ng-model="methods">
         <option value="GET">GET</option>
         <option value="POST">POST</option>
         <option value="OPTIONS">OPTIONS</option>
@@ -35,6 +35,9 @@
     </li>
     <li ng-repeat="response in responses">
       {{response.urlName}}
+    </li>
+    <li ng-repeat="response in responses">
+      {{response.responseTime}}
     </li>
   </ul>
       </div>
