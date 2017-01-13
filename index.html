@@ -12,37 +12,38 @@
 </head>
 
 <body ng-controller="MainController">
-<div class='row'>
-  <div class='sixteen columns'>
-    <div class='six columns offset-by-three'>
-      <input type="text" ng-model="url">
-      <button ng-click="fetch()">Fetch!</button>
-      <select name="select" ng-model="methods">
-        <option value="GET">GET</option>
-        <option value="POST">POST</option>
-        <option value="OPTIONS">OPTIONS</option>
-        <option value="HEAD">HEAD</option>
-      </select>
-      <div ng-show="selected">
-        <input></input>
-      </div>
-  <ul>
-    <li ng-repeat="response in responses">
-      {{response.statusCode}}
-    </li>
-    <li ng-repeat="response in responses">
-      {{response.methodName}}
-    </li>
-    <li ng-repeat="response in responses">
-      {{response.urlName}}
-    </li>
-    <li ng-repeat="response in responses">
-      {{response.responseTime}}
-    </li>
-  </ul>
-      </div>
-    </div>
-  </div>
-</body>
+<div class="row">
+  <div class="sixteen columns">
+        <div class="six columns offset-by-three">
+            <div class="row">
+                <input type="text" ng-model="url">
+                <select ng-model="method" ng-model="methods">
+                    <option value="GET">GET</option> 
+                    <option value="POST">POST</option>
+                    <option value="OPTIONS">OPTIONS</option>
+                    <option value="HEAD">HEAD</option>
+                </select>
+                  <button ng-click="fetch()">FETCH!</button>
+                  </div>
+<!--                    <form ng-show="userposting">Sup</form>
+ -->                  <table ng-show="!userposting">
+                      <tr>
+                        <th>Status Code</th>
+                        <th>URL</th>
+                        <th>HTTP Method</th>
+                        <th>Response Time</th>
+                        <th>Content Size</th>
+                      </tr>
+                      <tr ng-repeat="response in responses">
+                        <td>{{response.statusCode}}</td>
+                        <td>{{response.urlName}}</td>
+                        <td>{{response.methodName}}</td>
+                        <td>{{response.responseTime}}</td>
+                        <td>{{""}}</td>
+                      </tr>
+                  </table>
 
+            </div>
+        </div>
+    </div>
 </html>
