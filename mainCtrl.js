@@ -38,7 +38,7 @@
                 response.responseTime = responseTime;
                 $scope.responses.push(response);
                  console.log($scope.methods)
-            // }, (error) => {
+            }, (error) => {
             //     debugger
             //     something else
             })
@@ -55,7 +55,7 @@
                 //something else
             })
           } else {
-            console.log('danger, will robinson');
+            console.log('danger!');
           }
         };
     });
